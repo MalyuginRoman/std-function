@@ -1,11 +1,11 @@
 #include <iostream>
 #include <functional>
 using namespace std;
-
+//1
 int f(int a, int b) {
     return a + b;
 }
-
+//2
 // Functions for simple math operations
 int add(int a, int b) {
     return a + b;
@@ -27,14 +27,14 @@ void func(int a, int b,
     int res = calc(a, b);
     cout << "Result: " << res << endl;
 }
-
+//3
 class C {
 public:
     int f(int a, int b) {
         return a * b;
     }
 };
-
+//4
 // Composed function
 function<int(int)> cf(function<int(int)> f1,
                         function<int(int)> f2) {
@@ -48,8 +48,10 @@ function<int(int)> cf(function<int(int)> f1,
     };
 }
 
-int main(int ac, char **av)
+int main(int argc, char *argv[])
 {
+    QCoreApplication a(argc, argv);
+//1
     // C++ Program to illustrate the working std::function
     // std::function wrapping traditional function
     function<int(int,int)> calc = f;
@@ -58,14 +60,14 @@ int main(int ac, char **av)
     // std::function wrapping a lambda expression
     calc = [](int a, int b) { return a * b; };
     cout << "Product:" << calc(8, 2) << endl;
-
+//2
     // C++ program to pass the std::function as arguments
     // Calling all the arithmetic functions
     func(8, 2, add);
     func(8, 2, sub);
     func(8, 2, mul);
     func(8, 2, divs);
-
+//3
     // C++ program to demonstrate usage of
     // unction with member functions
     C c;
@@ -78,7 +80,7 @@ int main(int ac, char **av)
         cout << "Product: " << calcf(c, 4, 5) << endl;
     else
         cout << "No Callable Assigned" << endl;
-
+//4
     // C++ program to demonstrate usage of
     // std::function for function composition
     auto add = [](int x) { return x + 2; };
