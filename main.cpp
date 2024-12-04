@@ -48,9 +48,8 @@ function<int(int)> cf(function<int(int)> f1,
     };
 }
 
-int main(int argc, char *argv[])
+int main(int ac, char **av)
 {
-    QCoreApplication a(argc, argv);
 //1
     // C++ Program to illustrate the working std::function
     // std::function wrapping traditional function
